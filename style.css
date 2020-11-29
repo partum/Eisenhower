@@ -1,0 +1,42 @@
+.matrix{
+    width: 90vw;
+    height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box{
+    width: 45vw;
+    height: 45vh;
+    background-color: red;
+    /*position: relative;*/
+    border-radius: 0px;
+  }
+
+#topLeft{
+    background-color: #495168;
+    position: absolute;
+    color: white;
+  }
+
+  #topRight{
+    background-color: #748db2;
+    left: 50%;
+    position: absolute;
+    color: white;
+  }
+
+  #bottomLeft{
+    background-color:#b78ca6;
+    position: absolute;
+    top: 45%;
+    color: white;
+  }
+
+  #bottomRight{
+    background-color:#c6b6c3;
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    color: black;
+  }
