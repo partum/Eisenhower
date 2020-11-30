@@ -1,13 +1,14 @@
 .matrix{
-    width: 90vw;
-    height: 90vh;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100vw;
+    height: 100vh;
+    /* margin-left: auto;
+    margin-right: auto; */
+    padding: 5em;
 }
 
 .box{
-    width: 45vw;
-    height: 45vh;
+    width: 50%;
+    height: 50%;
     background-color: red;
     /*position: relative;*/
     border-radius: 0px;
