@@ -11,7 +11,9 @@
 
 <body>
     <div class="matrix">
-        <div class="box" id="topLeft"></div>
+        <div class="box" id="topLeft">
+            <input type="checkbox" value="finished"> <label> Test Task</label>
+        </div>
         <div class="box" id="topRight"></div>
         <div class="box" id="bottomLeft"></div>
         <div class="box" id="bottomRight"></div>
@@ -19,8 +21,12 @@
     <div id="input">
         <form id="task-input">
           <div class="line">
-          <label id="task">Task: </label>
+          <label>Task: </label>
           <input type="text" id="task" name="task" placeholder="Enter your task here and check the boxes to prioritize." required>
-          <input type="checkbox" value="Important">
-          <label> Important</label>
+          <input type="checkbox" value="Important"> <label> Important</label>
+          <input type="checkbox" value="Urgent"> <label> Urgent</label>
+          <button id=submit> Add Task </button>
+          </div>
+          </form>
+          </div>
 </body>

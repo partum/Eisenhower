@@ -1,43 +1,63 @@
 .matrix{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     /* margin-left: auto;
     margin-right: auto; */
-    padding: 5em;
+    padding: 5vmin;
+    overflow: hidden;
 }
 
 .box{
     width: 50%;
     height: 50%;
     background-color: red;
-    /*position: relative;*/
+    position: relative;
     border-radius: 0px;
+    padding: 3em;
   }
 
 #topLeft{
     background-color: #495168;
-    position: absolute;
     color: white;
   }
 
   #topRight{
     background-color: #748db2;
     left: 50%;
-    position: absolute;
+    top: -50%;
     color: white;
   }
 
   #bottomLeft{
     background-color:#b78ca6;
-    position: absolute;
-    top: 45%;
+    top: -50%;
     color: white;
   }
 
   #bottomRight{
     background-color:#c6b6c3;
     left: 50%;
-    position: absolute;
-    top: 45%;
+    top: -100%;
     color: black;
+  }
+
+  #task{
+    width: 30em;
+  }
+
+  #input{
+    text-align: center;
+  }
+
+  button {
+    border: 2px solid white;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+  }
+
+  button:hover{
+    border: 2px solid #ecee7f;
   }
