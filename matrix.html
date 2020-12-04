@@ -13,26 +13,20 @@
     <div class="matrix">
         <div class="box" id="topLeft">
             <input type="checkbox" value="finished"> 
-                <label> Test Task</label> <br>
+                <label>Test Task</label> <br>
             
-            <input type="checkbox" value="finished"> 
-                <label> test 2</label> <br>
-            <input type="checkbox" value="finished"> 
-                <label> test 2</label> <br>
-            <input type="checkbox" value="finished"> 
-                <label> test 2</label> <br>
         </div>
         <div class="box" id="topRight"></div>
         <div class="box" id="bottomLeft"></div>
         <div class="box" id="bottomRight"></div>
     </div>
     <div id="input">
-        <form id="task-input">
+        <form id="task-input" onsubmit="addTask();return false;">
           <div class="line">
           <label>Task: </label>
           <input type="text" id="task" name="task" placeholder="Enter your task here and check the boxes to prioritize." required>
-          <input type="checkbox" value="Important"> <label> Important</label>
-          <input type="checkbox" value="Urgent"> <label> Urgent</label>
+          <input type="checkbox" id="Important"> <label>Important</label>
+          <input type="checkbox" id="Urgent"> <label>Urgent</label>
           <button id=submit> Add Task </button>
           </div>
           </form>

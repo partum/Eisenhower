@@ -1,19 +1,41 @@
-//add task with a check box (and a br)
-var newCheck = document.createElement("input");
-newCheck.setAttribute("type", "checkbox")
-newCheck.setAttribute("value", "finished")
+function checkBoxes(){
+    const cbImportant = document.getElementById('Important');
+    const cbUrgent = document.getElementById('Urgent');
+    if (cbImportant.checked && cbUrgent.checked){
+        return "topLeft";
+    }else if(cbImportant.checked && !cbUrgent.checked){
+        return "topRight";
+    }else if(!cbImportant.checked && cbUrgent.checked){
+        return "bottomLeft";
+    }else{
+        return "bottomRight";
+    }
+}
 
-var newTask = document.createElement("label");
-var node = document.createTextNode("This is new.");
-newTask.appendChild(node);
+function addTask() {
+    var inputTask = document.getElementById("task-input").elements[0].value;
 
-var newBreak = document.createElement("br");
+    //add task with a check box (and a br)
+    var newCheck = document.createElement("input");
+    newCheck.setAttribute("type", "checkbox")
+    newCheck.setAttribute("value", "finished")
 
-var element = document.getElementById("topLeft");
-element.appendChild(newCheck);
-element.appendChild(newTask);
-element.append(newBreak);
+    var newTask = document.createElement("label");
+    var node = document.createTextNode(" " + inputTask);
+    newTask.appendChild(node);
 
+    var newBreak = document.createElement("br");
+
+    var section = checkBoxes();
+    var element = document.getElementById(section);
+    element.appendChild(newCheck);
+    element.appendChild(newTask);
+    element.append(newBreak);
+}
+
+
+const cb = document.getElementById('Important');
+console.log(cb.checked);
 
 
 

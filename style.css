@@ -62,3 +62,7 @@
   button:hover{
     border: 2px solid #ecee7f;
   }
+  
+   input{
+     margin-right: 1ch;
+   }
