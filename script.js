@@ -1,4 +1,4 @@
-function checkBoxes(){
+function getLocation(){
     const cbImportant = document.getElementById('Important');
     const cbUrgent = document.getElementById('Urgent');
     if (cbImportant.checked && cbUrgent.checked){
@@ -19,6 +19,13 @@ function addTask() {
     var newCheck = document.createElement("input");
     newCheck.setAttribute("type", "checkbox")
     newCheck.setAttribute("value", "finished")
+    newCheck.addEventListener('change', function() {
+        if (this.checked) {
+          removeTasks(newCheck, newTask, newBreak);
+        } else {
+          console.log("error removing item");
+        }
+      });
 
     var newTask = document.createElement("label");
     var node = document.createTextNode(" " + inputTask);
@@ -26,16 +33,17 @@ function addTask() {
 
     var newBreak = document.createElement("br");
 
-    var section = checkBoxes();
-    var element = document.getElementById(section);
-    element.appendChild(newCheck);
-    element.appendChild(newTask);
-    element.append(newBreak);
+    var section = document.getElementById(getLocation());
+    section.appendChild(newCheck);
+    section.appendChild(newTask);
+    section.append(newBreak);
 }
 
-
-const cb = document.getElementById('Important');
-console.log(cb.checked);
+function removeTasks(elmA, elemB, elemC) { //this could be shorter if I had added the task (box, name, br) in a div
+    elmA.remove();
+    elemB.remove();
+    elemC.remove();
+}
 
 
 
