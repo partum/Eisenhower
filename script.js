@@ -66,7 +66,6 @@ function newIndex(){
             alert("That's enough tasks!");
             index = 'exit condition'; 
             document.getElementById("submit").disabled = true;
-            console.log(localStorage);
         }
         newIndex();
     }
@@ -106,6 +105,7 @@ if (taskCount == 0){
 // localStorage.removeItem(19);
 // localStorage.removeItem(20);
 // localStorage.removeItem(21);
+// localStorage.removeItem("exit condition");
 
 var x = 0;
 var startUp = true;
