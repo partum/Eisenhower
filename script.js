@@ -44,6 +44,8 @@ function addTask(inputTask = document.getElementById("task-input").elements[0].v
     //save task to local storage
     localStorage.setItem(index, inputTask + "$*!" + location);
     newIndex();
+
+    document.getElementById('task').value=''; 
 }
 
 function removeTasks(elmA, elemB, elemC) { //this could be shorter if I had added the task (box, name, br) in a div
