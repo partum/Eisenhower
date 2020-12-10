@@ -64,7 +64,7 @@ function newIndex(){
         if (index > 21){
             index = 0;
         }
-        if (localStorage["length"] > 20){
+        if (localStorage["length"] > 20 && startUp == false){
             alert("That's enough tasks!");
             index = 'exit condition'; 
             document.getElementById("submit").disabled = true;
@@ -134,3 +134,7 @@ while(x < 21){
     x++;
 }
 console.log(index);
+
+if (localStorage["length"] > 20){
+    document.getElementById("submit").disabled = true;
+}
