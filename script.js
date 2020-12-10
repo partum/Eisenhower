@@ -1,5 +1,5 @@
-numTasks = 0;
-
+// functions
+// returns the location of the new task based on what prioritizing boxes were checked
 function getLocation(){
     const cbImportant = document.getElementById('Important');
     const cbUrgent = document.getElementById('Urgent');
@@ -14,10 +14,8 @@ function getLocation(){
     }
 }
 
+// adds a new task including the check box, line break, event listener
 function addTask(inputTask = document.getElementById("task-input").elements[0].value, location = getLocation()) {
-    //var inputTask = document.getElementById("task-input").elements[0].value;
-
-    //add task with a check box (and a br)
     var newCheck = document.createElement("input");
     newCheck.setAttribute("type", "checkbox")
     newCheck.setAttribute("value", "finished")
@@ -48,6 +46,7 @@ function addTask(inputTask = document.getElementById("task-input").elements[0].v
     document.getElementById('task').value=''; 
 }
 
+// removes a task (connected to the check box listener)
 function removeTasks(elmA, elemB, elemC) { //this could be shorter if I had added the task (box, name, br) in a div
     localStorage.removeItem(elemB.id);
     index = elemB.id;
@@ -57,7 +56,7 @@ function removeTasks(elmA, elemB, elemC) { //this could be shorter if I had adde
     elemC.remove();
 }
 
-
+// gets the next index for a task to be saved under. Also checks if there are too many tasks and disables the submit button
 function newIndex(){
     if (index in localStorage){
         index++;
@@ -73,7 +72,7 @@ function newIndex(){
     }
 }
 
-
+//main
 //setting index as 0 or as its last saved value
 var taskCount = document.getElementById("topLeft").childElementCount + document.getElementById("topRight").childElementCount 
 + document.getElementById("bottomLeft").childElementCount + document.getElementById("bottomRight").childElementCount; 
@@ -82,33 +81,8 @@ if (taskCount == 0){
 }else{
     index = localStorage.getItem('count');
 }
-// console.log(localStorage["length"]);
 
-
-// localStorage.removeItem(0);
-// localStorage.removeItem(1);
-// localStorage.removeItem(2);
-// localStorage.removeItem(3);
-// localStorage.removeItem(4);
-// localStorage.removeItem(5);
-// localStorage.removeItem(6);
-// localStorage.removeItem(7);
-// localStorage.removeItem(8);
-// localStorage.removeItem(9);
-// localStorage.removeItem(10);
-// localStorage.removeItem(11);
-// localStorage.removeItem(12);
-// localStorage.removeItem(13);
-// localStorage.removeItem(14);
-// localStorage.removeItem(15);
-// localStorage.removeItem(16);
-// localStorage.removeItem(17);
-// localStorage.removeItem(18);
-// localStorage.removeItem(19);
-// localStorage.removeItem(20);
-// localStorage.removeItem(21);
-// localStorage.removeItem("exit condition");
-
+// runs at reload. Adds all saved tasks
 var x = 0;
 var startUp = true;
 while (x < 21){
@@ -124,6 +98,7 @@ while (x < 21){
 
 }
 var startUp = false;
+
 //setting a new index (because it is now 21)
 x = 0;
 while(x < 21){
@@ -135,6 +110,7 @@ while(x < 21){
 }
 console.log(index);
 
+// if the page is reloaded with max tasks the submit button is already disabled 
 if (localStorage["length"] > 20){
     document.getElementById("submit").disabled = true;
 }
